@@ -46,9 +46,13 @@ int main()
 	vecesJugadas = 0;
 	if (jugar == 's')
 	{
+		textbackground(GREEN);
+		textcolor (BLUE) ;
 		cout
 			<< "*************************************************************\nREGLAS DEL JUEGO DE LA OCA\nCada jugador lanzara un dado por turnos,\ncomenzara a jugar el que obtenga la puntuacion mas alta\n*************************************************************"
 			<< endl;
+		textbackground(0);
+		textcolor(15);
 		PlaySound(TEXT("sound/startmusic.wav"), NULL, SND_FILENAME);
 		cout << "Ingresa la edad del Jugador 1: ";
 		cin >> edadJugador1;
@@ -66,13 +70,13 @@ int main()
 				do
 				{ // se elige quien empieza la partida
 					tiradaJugador1 = 1 + rand() % 6;
-					PlaySound(TEXT("sound/sonidodado.wav"), NULL, SND_FILENAME);
+					PlaySound(TEXT("sound/sonidodado1.wav"), NULL, SND_FILENAME);
 					cout << "   Tirada de " << nombreJugador1 << ": "
 						 << tiradaJugador1 << endl;
 					Sleep(1000);
 
 					tiradaJugador2 = rand() % 6 + 1;
-					PlaySound(TEXT("sound/sonidodado.wav"), NULL, SND_FILENAME);
+					PlaySound(TEXT("sound/sonidodado2.wav"), NULL, SND_FILENAME);
 					cout << "   Tirada de " << nombreJugador2 << ": "
 						 << tiradaJugador2 << endl;
 					Sleep(1000);
@@ -105,7 +109,7 @@ int main()
 					if (numTiradas % 2 == 0)
 					{ // si las tiradas son pares pertenecen al jugador 1
 						cout << "Tira " << nombreJugador1 << endl;
-						PlaySound(TEXT("sound/sonidodado.wav"), NULL,
+						PlaySound(TEXT("sound/sonidodado1.wav"), NULL,
 								  SND_FILENAME);
 						Sleep(delay);
 						if (puntosJugador1 + tiradaJugador <= PUNTOSGANAR)
@@ -125,7 +129,7 @@ int main()
 					else
 					{ // si las tiradas son impares pertenecen al jugador 2
 						cout << "Tira " << nombreJugador2 << endl;
-						PlaySound(TEXT("sound/sonidodado.wav"), NULL, SND_FILENAME);
+						PlaySound(TEXT("sound/sonidodado2.wav"), NULL, SND_FILENAME);
 						Sleep(delay);
 						if (puntosJugador2 + tiradaJugador <= PUNTOSGANAR)
 						{									 // elige si puede avanzar o no
