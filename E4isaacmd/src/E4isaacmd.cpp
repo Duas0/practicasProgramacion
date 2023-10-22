@@ -38,8 +38,12 @@ int main()
 
 	while (jugar != 's' && jugar != 'n')
 	{
-		cout << "La respuesta no es valida. Solo se puede aceptar s y n.";
-		cout << "Por favor introduce una respuesta en formato s/n" << endl;
+		PlaySound(TEXT("sound/errorsound.wav"), NULL, SND_FILENAME);
+		textcolor(4);
+		cout << "La respuesta no es valida. Solo se puede aceptar s y n."<<endl;
+		textcolor(15);
+		cout << "Por favor introduce una respuesta en formato s/n"
+			 << endl;
 		cin >> jugar;
 		jugar = tolower(jugar);
 	}
@@ -71,13 +75,13 @@ int main()
 				{ // se elige quien empieza la partida
 					tiradaJugador1 = 1 + rand() % 6;
 					PlaySound(TEXT("sound/sonidodado1.wav"), NULL, SND_FILENAME);
-					cout << "   Tirada de " << nombreJugador1 << ": "
+					cout << "\tTirada de " << nombreJugador1 << ": "
 						 << tiradaJugador1 << endl;
 					Sleep(1000);
 
 					tiradaJugador2 = rand() % 6 + 1;
 					PlaySound(TEXT("sound/sonidodado2.wav"), NULL, SND_FILENAME);
-					cout << "   Tirada de " << nombreJugador2 << ": "
+					cout << "\tTirada de " << nombreJugador2 << ": "
 						 << tiradaJugador2 << endl;
 					Sleep(1000);
 					if (tiradaJugador1 > tiradaJugador2)
@@ -221,11 +225,11 @@ int main()
 				jugar = tolower(jugar);
 				while (jugar != 's' && jugar != 'n')
 				{
-					cout << "\t"
-						 << "La respuesta no es valida. Solo se puede aceptar s y n.";
-					cout << "\t"
-						 << "Por favor introduce una respuesta en formato s/n"
-						 << endl;
+					PlaySound(TEXT("sound/errorsound.wav"), NULL, SND_FILENAME);
+					textcolor(4);
+					cout << "La respuesta no es valida. Solo se puede aceptar s y n."<<endl;
+					textcolor(15);
+					cout << "Por favor introduce una respuesta en formato s/n"<< endl;
 					cin >> jugar;
 					jugar = tolower(jugar);
 				}
@@ -234,13 +238,14 @@ int main()
 		}
 		else
 		{
+			PlaySound(TEXT("sound/errorsound.wav"), NULL, SND_FILENAME);
 			textcolor(4);
 			cout
 				<< "Las edades de los jugadores no son validas. El juego ha terminado."
 				<< endl;
-			PlaySound(TEXT("sound/errorsound.wav"), NULL, SND_FILENAME);
 		}
 	}
+	textcolor(15);
 	if (vecesJugadas == 1)
 	{
 		cout << "Gracias por jugar esta partida. ";
@@ -252,7 +257,6 @@ int main()
 			 << vecesJugadas << " partidas. ";
 	}
 	cout << "Hasta luego!" << endl;
-	textcolor(15);
 	system("PAUSE");
 	return 0;
 }
