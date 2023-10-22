@@ -151,7 +151,7 @@ int main()
 					}
 					if (tiradaJugador != -1)
 					{
-						tiradaJugador = rand() % 8; // aleatorio entre 1 y 8
+						tiradaJugador = rand() % 8; // aleatorio entre 0 y 8
 					}
 					switch (tiradaJugador)
 					{
