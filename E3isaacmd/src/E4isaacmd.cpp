@@ -1,9 +1,9 @@
 //============================================================================
-// Name        : E3isaacmd.cpp
+// Name        : E4isaacmd.cpp
 // Author      : Isaac Moreno Duaso
 // Version     :
 // Copyright   :
-// Description : Practica 3. Implementación de correcciones junto con la prácitca 3. Bucles.
+// Description : Practica 4. Juego de la oca, se añaden tiradas alternas entre jugadores. Llega a 63 y gana.
 //============================================================================
 
 #include <iostream>
